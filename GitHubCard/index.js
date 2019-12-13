@@ -2,6 +2,7 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
+axios.get('https://api.github.com/fiopwk')
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -24,7 +25,13 @@
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = [
+  'tetondan',
+  'dustinmyers',
+  'justsml',
+  'luishrd',
+  'bigknell'
+];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -53,3 +60,32 @@ const followersArray = [];
   luishrd
   bigknell
 */
+
+function getUsers(obj) {
+
+
+  const card_info = document.createElement('div').classList.add('card-info')
+  const user_name = document.createElement('p').classList.add('username')
+  const name = document.createElement('h3').classList.add('name')
+  const card = document.createElement('div').classList.add('card')
+  const card_img = document.createElement('img').src = '';
+  const followers = document.createElement('p')
+  const following = document.createElement('p')
+  const bio = document.createElement('p')
+  const profile = document.createElement('p')
+  const profile_link = document.createElement('a')
+  const location = document.createElement('p')
+  
+  
+  profile.textContent = 'Profile:';
+  card_img.src = obj.avatar_url;
+  card_img.alt = 'github user';
+  followers.textContent = `Followers: ${obj.followers}`
+
+
+  
+
+
+}
+
+
